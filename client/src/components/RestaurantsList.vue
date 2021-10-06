@@ -80,8 +80,15 @@
           item.cuisine
         }}</md-table-cell>
         <md-table-cell
-          ><router-link :to="'/restaurants/' + item._id"
-            >Détail</router-link
+          ><md-button class="md-raised md-primary" :to="'/restaurants/' + item._id"
+            >Détail</md-button
+          ></md-table-cell
+        >
+        <md-table-cell
+          ><md-button
+            class="md-raised md-accent"
+            @click="supprimerRestaurant(item)"
+            >Supprimer</md-button
           ></md-table-cell
         >
       </md-table-row>
