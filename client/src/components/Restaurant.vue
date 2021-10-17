@@ -33,12 +33,21 @@
         </li>
       </ul>
     </div>
+
+    <div>
+      <Map ref="center" />
+    </div>
   </div>
 </template>
 
 <script>
+import Map from './Map.vue';
+
 export default {
   name: "Restaurant",
+  components: {
+    Map
+  },
   props: {},
   data: function () {
     return {
@@ -47,6 +56,7 @@ export default {
       adresse: "",
       latitude: "",
       longitude: "",
+      center: [0, 0],
       grades: [],
       date: [],
     };
@@ -66,17 +76,43 @@ export default {
       fetch(url)
         .then((responseJSON) => {
           responseJSON.json().then((data) => {
+            // Restaurant
+            //
             this.restaurant = data.restaurant;
+            
+            // Nom du restaurant
+            //
             this.name = this.restaurant.name;
+
+            // Type de cuisine
+            //
             this.cuisine = this.restaurant.cuisine;
+            
+            // Construction de l'adresse
+            //
             this.adresse = this.restaurant.address.building + " " + 
                            this.restaurant.address.street + " " + 
                            this.restaurant.address.zipcode + " " + 
                            this.restaurant.borough;
+            
+            // Récpération de la latitude et de la longitude
+            //
             this.latitude = this.restaurant.address.coord[1];
             this.longitude = this.restaurant.address.coord[0];
+
+            this.center[0] = this.latitude;
+            this.center[1] = this.longitude;
+
+            console.log(this.center);
+
+            this.$refs.center.center = this.center;
+            
+            // Récupération des avis clients
+            //
             this.grades = this.restaurant.grades;
 
+            // Transformation du format de la date des avis des clients
+            //
             for(let i = 0; i < this.grades.length; i++) {
               this.grades[i].date = this.grades[i].date.substring(0, 10);
               this.grades[i].date = this.grades[i].date.split("-")[2] + " / " + 
