@@ -18,7 +18,7 @@ export default {
 
 h1{
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  font-size: 200px;
+  font-size: 10vw;
 }
 
 small {
