@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <router-link to="/">[HOME]</router-link>
-    <router-link to="/restaurants">[Liste des restaurants]</router-link>
+    <router-link to="/"><button class="menu">ACCUEIL</button></router-link>
+    <router-link to="/restaurants"><button class="menu">TROUVER UN RESTAURANT</button></router-link>
 
     <br /><br />
 
@@ -21,8 +21,24 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 100%;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #22364b;
+  margin-top: 20px;
+  margin-left: 5px;
+}
+
+.menu{
+  font-size: 150%;
+  background-color: #E8694D;
+  border-style: solid;  
+  border-radius: 10px;
+  border-color: #22364b;
+  margin: 1%;
+  padding: 1%;
+}
+
+.menu:hover{
+  background-color: #eb917d;
 }
 </style>
