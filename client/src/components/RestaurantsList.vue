@@ -226,7 +226,8 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
+
 .left-side{
   float: left;
   position: fixed;
@@ -237,6 +238,7 @@ export default {
 
 .right-side{
   float: right;
+  padding-right: 1vw;
   width: 60%;
 }
 
@@ -256,9 +258,15 @@ td {
 }
 
 tr:hover {
-  background-color: yellow;
+  background-color: rgb(230, 228, 228);
+  border-width: 3px;
+  border-color: #22364b;
 }
 
+input{
+  height: 25px;
+  border-radius: 50px;
+}
 
 input:invalid {
   background-color: rgb(230, 228, 228);
