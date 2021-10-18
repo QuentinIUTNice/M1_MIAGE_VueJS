@@ -230,13 +230,14 @@ export default {
 .left-side{
   float: left;
   position: fixed;
-  font-size: 1vw;
   text-align: left;
   padding-left: 1vw;
+  width: 30%;
 }
 
 .right-side{
   float: right;
+  width: 60%;
 }
 
 table {
@@ -258,12 +259,13 @@ tr:hover {
   background-color: yellow;
 }
 
+
 input:invalid {
-  background-color: pink;
+  background-color: rgb(230, 228, 228);
 }
 
 input:valid {
-  background-color: lightGreen;
+  background-color: white;
 }
 
 h1 {
