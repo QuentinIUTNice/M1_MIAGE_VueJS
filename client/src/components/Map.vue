@@ -11,18 +11,27 @@
       @update:center="centerUpdated"
     >
       <l-tile-layer :url="url"> </l-tile-layer>
+
+      <l-marker :key="0" :lat-lng="center">
+        <l-icon ref="icon">
+          <img class="restaurant-icon" src="../assets/pr.png"/>
+        </l-icon>
+      </l-marker>
     </l-map>
   </div>
 </template>
 
 <script>
 import { LMap, LTileLayer } from "vue2-leaflet";
+import { LIcon, LMarker } from 'vue2-leaflet'
 import "leaflet/dist/leaflet.css";
 
 export default {
   components: {
     LMap,
     LTileLayer,
+    LIcon,
+    LMarker
   },
   props: {
       c: {
@@ -54,4 +63,12 @@ export default {
   height: 33%;
   overflow: hidden;
 }
+
+.restaurant-icon {
+  position: absolute; /* postulat de départ */
+    top: 50%; left: 50%; /* à 50%/50% du parent référent */
+    transform: translate(-50%, -50%);
+    width: 150%;
+    height: auto;
+ }
 </style>
