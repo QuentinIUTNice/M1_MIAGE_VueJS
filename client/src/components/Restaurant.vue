@@ -34,11 +34,11 @@
       </ul>
     </div>
 
-    <div>
+    <div id="map">
       <Map ref="center" />
     </div>
 
-    <div>
+    <div id="carte">
       <Picture />
     </div>
   </div>
@@ -139,5 +139,14 @@ export default {
 ul,
 li {
   text-align: left;
+}
+
+#map{
+  float: left;
+  margin-left: 10%;
+}
+#carte{
+  float: right;
+   margin-right: 10%;
 }
 </style>
