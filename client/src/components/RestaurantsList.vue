@@ -1,11 +1,11 @@
 <template>
-  <div class="hello">
-    <h1>Liste des restaurants</h1>
+  <div class="page">
+    <div class="left-side">
 
     <br />
 
     <h2>Nombre de restaurants : {{ nbTotalRestaurants }}</h2>
-    <h3>Nombre de pages : {{ nbTotalPages }}</h3>
+    <h2>Nombre de pages : {{ nbTotalPages }}</h2>
     <p>
       Nombre de restaurants par pages :
       <input
@@ -61,8 +61,10 @@
     </md-button>
 
     <br /><br />
+    </div>
 
-    <md-table v-model="restaurants" md-sort="name" md-sort-order="asc">
+    <div class="right-side">
+      <md-table v-model="restaurants" md-sort="name" md-sort-order="asc">
       <md-table-row>
         <md-table-head>Nom</md-table-head>
         <md-table-head>Cuisine</md-table-head>
@@ -93,7 +95,11 @@
         >
       </md-table-row>
     </md-table>
+    </div>
   </div>
+  
+
+
 </template>
 
 <script>
@@ -221,6 +227,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.left-side{
+  float: left;
+  position: fixed;
+  font-size: 1vw;
+  text-align: left;
+  padding-left: 1vw;
+}
+
+.right-side{
+  float: right;
+}
+
 table {
   border: 1px solid black;
   width: 100%;
