@@ -12,7 +12,7 @@
         v-on:input="getRestaurantsFromServer()"
         type="range"
         min="1"
-        :max="nbTotalRestaurants"
+        :max="100"
         v-model="pageSize"
       />
       {{ pageSize }}
@@ -219,7 +219,7 @@ export default {
       }
     },
     getColor(index) {
-      return index % 2 ? "lightBlue" : "pink";
+      return index % 2;
     },
   },
 };
