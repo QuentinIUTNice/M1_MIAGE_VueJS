@@ -1,5 +1,5 @@
 <template>
-  <div class="global">
+  <div>
     <h1>Carte</h1>
 
     <l-map

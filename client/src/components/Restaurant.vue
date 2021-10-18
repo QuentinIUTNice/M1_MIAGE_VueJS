@@ -37,16 +37,22 @@
     <div>
       <Map ref="center" />
     </div>
+
+    <div>
+      <Picture />
+    </div>
   </div>
 </template>
 
 <script>
 import Map from './Map.vue';
+import Picture from './Picture.vue';
 
 export default {
   name: "Restaurant",
   components: {
-    Map
+    Map,
+    Picture,
   },
   props: {},
   data: function () {
