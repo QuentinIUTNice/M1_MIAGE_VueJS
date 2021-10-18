@@ -41,18 +41,24 @@
     <div>
       <Picture />
     </div>
+
+    <div>
+      <Video />
+    </div>
   </div>
 </template>
 
 <script>
 import Map from './Map.vue';
 import Picture from './Picture.vue';
+import Video from './Video.vue';
 
 export default {
   name: "Restaurant",
   components: {
     Map,
     Picture,
+    Video,
   },
   props: {},
   data: function () {

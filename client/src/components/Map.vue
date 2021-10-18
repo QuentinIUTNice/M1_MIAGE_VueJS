@@ -39,7 +39,6 @@ export default {
   methods: {
     zoomUpdated(zoom) {
       this.zoom = zoom;
-      console.log(this.markers);
     },
     centerUpdated(center) {
       this.center = center;
