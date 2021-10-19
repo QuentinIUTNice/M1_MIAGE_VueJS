@@ -45,6 +45,12 @@
     <div>
       <Video />
     </div>
+    
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    
+    <div>
+      <Menu />
+    </div>
   </div>
 </template>
 
@@ -52,6 +58,7 @@
 import Map from './Map.vue';
 import Picture from './Picture.vue';
 import Video from './Video.vue';
+import Menu from './Menu.vue';
 
 export default {
   name: "Restaurant",
@@ -59,6 +66,7 @@ export default {
     Map,
     Picture,
     Video,
+    Menu,
   },
   props: {},
   data: function () {

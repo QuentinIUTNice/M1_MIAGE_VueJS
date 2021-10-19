@@ -55,8 +55,8 @@ export default {
 <style scoped>
 .map {
   position: absolute;
-  width: 33%;
-  height: 33%;
+  width: 400px;
+  height: 200px;
   overflow: hidden;
 }
 

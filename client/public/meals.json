@@ -4,31 +4,31 @@
 			"name": "Salade de roquette, tomates cerises, mozzarella et jambon cru",
 			"description": "",
 			"price": "10€",
-			"picture": "./Salade.png"
+			"picture": "http://localhost:8081/meals/Salade.jpeg"
 		},
 		{
 			"name": "Soupe gratinée à l’oignon",
 			"description": "",
 			"price": "7€",
-			"picture": "./Soupe.png"
+			"picture": "http://localhost:8081/meals/Soupe.jpeg"
 		},
 		{
 			"name": "Quiche tatin",
 			"description": "",
 			"price": "6€",
-			"picture": "./Quiche.png"
+			"picture": "http://localhost:8081/meals/Quiche.jpeg"
 		},
 		{
 			"name": "Flan de courgettes",
 			"description": "",
 			"price": "8€",
-			"picture": "./Flan.png"
+			"picture": "http://localhost:8081/meals/Flan.jpeg"
 		},
 		{
 			"name": "Samoussa au boeuf",
 			"description": "",
 			"price": "9€",
-			"picture": "./Samoussa.png"
+			"picture": "http://localhost:8081/meals/Samoussa.jpeg"
 		}
 	],
 	"gastronomic_starter": [
@@ -36,31 +36,31 @@
 			"name": "Tartare de thon, mangue, coeur avocat",
 			"description": "",
 			"price": "15€",
-			"picture": "./Tartare.png"
+			"picture": "http://localhost:8081/meals/Tartare.jpeg"
 		},
 		{
 			"name": "Panna Cotta de haricot Tarbais, jambon de porc noir de Bigorre, vinaigrette Passion",
 			"description": "",
 			"price": "17€",
-			"picture": "./PannaCotta.png"
+			"picture": "http://localhost:8081/meals/PannaCotta.jpeg"
 		},
 		{
 			"name": "Raviole de homard aux fines herbes, bouillon aux senteurs de safran",
 			"description": "",
 			"price": "22€",
-			"picture": "./Raviole.png"
+			"picture": "http://localhost:8081/meals/Raviole.jpeg"
 		},
 		{
 			"name": "Escargots de Bourgogne Encornets marinés, juste snackés, tomates fumées",
 			"description": "",
 			"price": "19€",
-			"picture": "./Escargots.png"
+			"picture": "http://localhost:8081/meals/Escargots.jpeg"
 		},
 		{
 			"name": "Encornets marinés, juste snackés, tomates fumées",
 			"description": "",
 			"price": "20€",
-			"picture": "./Encornets.png"
+			"picture": "http://localhost:8081/meals/Encornets.jpeg"
 		}
 	],
 	"dish": [
@@ -68,31 +68,31 @@
 			"name": "Gratin de coquillettes au reblochon",
 			"description": "",
 			"price": "13€",
-			"picture": "./Gratin.png"
+			"picture": "http://localhost:8081/meals/Gratin.jpeg"
 		},
 		{
 			"name": "Croque-monsieur",
 			"description": "",
 			"price": "12€",
-			"picture": "./CroqueMonsieur.png"
+			"picture": "http://localhost:8081/meals/CroqueMonsieur.jpeg"
 		},
 		{
 			"name": "Pizza tomate mozzarella",
 			"description": "",
 			"price": "11€",
-			"picture": "./Pizza.png"
+			"picture": "http://localhost:8081/meals/Pizza.jpeg"
 		},
 		{
 			"name": "Taboulé au poulet",
 			"description": "",
 			"price": "10€",
-			"picture": "./Taboulet.png"
+			"picture": "http://localhost:8081/meals/Taboulet.jpeg"
 		},
 		{
 			"name": "Tagliatelles à la carbonara",
 			"description": "",
 			"price": "12€",
-			"picture": "./Tagliatelles.png"
+			"picture": "http://localhost:8081/meals/Tagliatelles.jpeg"
 		}
 	],
 	"gastronomic_dish": [
@@ -100,31 +100,31 @@
 			"name": "Entrecôte au beurre persillé ou beurre maître d’hôtel",
 			"description": "",
 			"price": "27€",
-			"picture": "./Entrecote.png"
+			"picture": "http://localhost:8081/meals/Entrecote.jpeg"
 		},
 		{
 			"name": "Bavette à l’échalote",
 			"description": "",
 			"price": "24€",
-			"picture": "./Bavette.png"
+			"picture": "http://localhost:8081/meals/Bavette.jpeg"
 		},
 		{
 			"name": "Bo Bun vietnamien au bœuf",
 			"description": "",
 			"price": "26€",
-			"picture": "./BoBun.png"
+			"picture": "http://localhost:8081/meals/BoBun.jpeg"
 		},
 		{
 			"name": "Faux-filet grillé au miso, cèpes, shiitakes et polenta croustillante",
 			"description": "",
 			"price": "25€",
-			"picture": "./FauxFilet.png"
+			"picture": "http://localhost:8081/meals/FauxFilet.jpeg"
 		},
 		{
 			"name": "Poulet aux cèpes et à la crème",
 			"description": "",
 			"price": "21€",
-			"picture": "./Poulet.png"
+			"picture": "http://localhost:8081/meals/Poulet.jpeg"
 		}
 	],
 	"dessert": [
@@ -132,31 +132,31 @@
 			"name": "Cheesecake",
 			"description": "",
 			"price": "3€",
-			"picture": "./Cheesecake.png"
+			"picture": "http://localhost:8081/meals/Cheesecake.jpeg"
 		},
 		{
 			"name": "Clafoutis",
 			"description": "",
 			"price": "4€",
-			"picture": "./Clafoutis.png"
+			"picture": "http://localhost:8081/meals/Clafoutis.jpeg"
 		},
 		{
 			"name": "Crème dessert",
 			"description": "",
 			"price": "5€",
-			"picture": "./Crème_dessert.png"
+			"picture": "http://localhost:8081/meals/Creme_dessert.jpeg"
 		},
 		{
 			"name": "Crumble",
 			"description": "",
 			"price": "4€",
-			"picture": "./Crumble.png"
+			"picture": "http://localhost:8081/meals/Crumble.jpeg"
 		},
 		{
 			"name": "Dessert aux fruits",
 			"description": "",
-			"price": "5",
-			"picture": "./Fruits.png"
+			"price": "5€",
+			"picture": "http://localhost:8081/meals/Fruits.jpeg"
 		}
 	],
 	"gastronomic_dessert": [
@@ -164,31 +164,31 @@
 			"name": "Meringues café noisette",
 			"description": "",
 			"price": "8€",
-			"picture": "./Meringues.png"
+			"picture": "http://localhost:8081/meals/Meringues.jpeg"
 		},
 		{
 			"name": "Tarte aux noix de Grenoble et miel",
 			"description": "",
 			"price": "9€",
-			"picture": "./Tarte.png"
+			"picture": "http://localhost:8081/meals/Tarte.jpeg"
 		},
 		{
 			"name": "Millefeuille de Gavottes à la vanille",
 			"description": "",
 			"price": "11€",
-			"picture": "./Millefeuille.png"
+			"picture": "http://localhost:8081/meals/Millefeuille.jpeg"
 		},
 		{
 			"name": "Chocolat Mekonga, cumin et citron confit",
 			"description": "",
 			"price": "9€",
-			"picture": "./Chocolat.png"
+			"picture": "http://localhost:8081/meals/Chocolat.jpeg"
 		},
 		{
 			"name": "Profiteroles au café et noix de pécan, sauce au chocolat chaud",
 			"description": "",
 			"price": "20€",
-			"picture": "./Profiteroles.png"
+			"picture": "http://localhost:8081/meals/Profiteroles.jpeg"
 		}
 	]
 }
