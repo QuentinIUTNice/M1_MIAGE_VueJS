@@ -271,12 +271,11 @@ td {
 
 tr:hover {
   background-color: rgb(230, 228, 228);
-  border-width: 3px;
   border-color: #22364b;
 }
 
 input{
-  height: 45px;
+  height: 3em;
   width: 80%;
 }
 
@@ -295,7 +294,7 @@ h2 {
 }
 
 .form-control{
-  margin-bottom: 3px;
+  margin-bottom: 0.2em;
 }
 
 #ajouterForm{
@@ -305,19 +304,19 @@ h2 {
 
 #ajouter{
   width: 30%;
-  height: 93px;
+  height: 5em;
   background-color: #22364b;
 }
 
 #search{
   width: 50%;
   margin-left: 25%;
+  margin-bottom: 12.5%;
 }
 
 #nav{
   text-align: center;
-  position: fixed;
-  bottom: 10px;
-  width:45%;
+  width:100%;
+  
 }
 </style>
