@@ -6,7 +6,7 @@
 
     <h2>Nombre de restaurants : {{ nbTotalRestaurants }}</h2>
     <h2>Nombre de pages : {{ nbTotalPages }}</h2>
-    <p>
+    <h2>
       Nombre de restaurants par pages :
       <input
         v-on:input="getRestaurantsFromServer()"
@@ -16,7 +16,7 @@
         v-model="pageSize"
       />
       {{ pageSize }}
-    </p>
+    </h2>
     <br />
 
     <h4>Ajouter un restaurant</h4>
@@ -27,12 +27,13 @@
       <div class="form-group">
         <input name="cuisine" class="form-control" placeholder="Type de Cuisine" id="cuisine" type="text" required v-model="cuisine" />
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary btn-lg" id="ajouter">Ajouter le Restaurant</button>
       
     </form>
 
     
-
+<br/>
+<br/>
     <h4>Rechercher un restaurant</h4>
     <p>
       <input
@@ -42,6 +43,7 @@
       />
     </p>
 
+    <div id="nav">
     <h4>Naviguer entre les pages</h4>
     <md-button
       class="md-raised"
@@ -60,6 +62,7 @@
     >
       Page suivante
     </md-button>
+    </div>
 
     <br /><br />
     </div>
@@ -228,21 +231,29 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+#ajouter{
+  margin-top: 1%;
+}
+
+#nav{
+  position: fixed;
+  bottom:0;
+}
 
 .left-side{
   float: left;
   position: fixed;
-  text-align: left;
-  padding-left: 1vw;
-  width: 30%;
+  text-align: center;
+  width: 45%;
   margin-top: 5%;
+  margin-left: 2.5%;
 }
 
 .right-side{
   float: right;
-  width: 60%;
-  right: 1vw;
+  width: 50%;
   margin-top: 5%;
+  background-color: cadetblue;
 }
 
 
@@ -271,13 +282,6 @@ input{
   height: 38px;
 }
 
-input:invalid {
-  background-color: rgb(230, 228, 228);
-}
-
-input:valid {
-  background-color: white;
-}
 
 h1 {
   text-align: center;

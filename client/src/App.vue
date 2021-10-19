@@ -28,7 +28,7 @@ export default {
 }
 
 .menu{
-  font-size: 150%;
+  font-size: 1.5vw;
   background-color: #E8694D;
   border-style: none;
   border-color: #22364b;
