@@ -1,7 +1,11 @@
 <template>
   <div id="app">
-    <router-link to="/"><button class="menu" id="left_button">ACCUEIL</button></router-link>
-    <router-link to="/restaurants"><button class="menu" id="right_button">TROUVER UN RESTAURANT</button></router-link>
+    <router-link to="/" custom v-slot="{ navigate }">
+      <span class="menu" id="left_button" @click="navigate" @keypress.enter="navigate" role="link">ACCUEIL</span>
+    </router-link>
+    <router-link to="/restaurants" custom v-slot="{ navigate }">
+      <span class="menu" id="right_button" @click="navigate" @keypress.enter="navigate" role="link">TROUVER UN RESTAURANT</span>
+    </router-link>
 
     <br /><br />
 
