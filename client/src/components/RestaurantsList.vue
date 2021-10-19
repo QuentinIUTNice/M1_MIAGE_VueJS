@@ -18,33 +18,37 @@
       {{ pageSize }}
     </h2>
     <br />
+    <br />
 
-    <h4>Ajouter un restaurant</h4>
+    <h2>Ajouter un restaurant:</h2>
     <form @submit.prevent="ajouterRestaurant($event)">
-      <div class="form-group">
+      <div id="ajouterForm" class="form-group">
         <input name="nom" class="form-control" placeholder="Nom du Restaurant" id="nom" type="text" required v-model="nom" />
-      </div>
-      <div class="form-group">
         <input name="cuisine" class="form-control" placeholder="Type de Cuisine" id="cuisine" type="text" required v-model="cuisine" />
       </div>
-      <button type="submit" class="btn btn-primary btn-lg" id="ajouter">Ajouter le Restaurant</button>
+      <button type="submit" class="btn btn-primary btn-lg" id="ajouter">Ajouter le restaurant</button>
       
     </form>
 
     
 <br/>
 <br/>
-    <h4>Rechercher un restaurant</h4>
+<br/>
+<br/>
+    <h2>Rechercher un restaurant:</h2>
     <p>
       <input
         v-on:input="searchRestaurants()"
+
         type="text"
+        class="form-control"
+        id="search"
+        placeholder="Rechercher..."
         v-model="searchedRestaurant"
       />
     </p>
-
     <div id="nav">
-    <h4>Naviguer entre les pages</h4>
+    <h4>
     <md-button
       class="md-raised"
       v-on:click="previousPage()"
@@ -62,6 +66,7 @@
     >
       Page suivante
     </md-button>
+    </h4>
     </div>
 
     <br /><br />
@@ -231,14 +236,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-#ajouter{
-  margin-top: 1%;
-}
-
-#nav{
-  position: fixed;
-  bottom:0;
-}
+  
 
 .left-side{
   float: left;
@@ -279,11 +277,48 @@ tr:hover {
 }
 
 input{
-  height: 38px;
+  height: 45px;
+  width: 80%;
 }
 
+input[id="search"] {
+  
+  background-image: url('../assets/Vector_search_icon.svg.png');
+  background-position: 10px 10px;
+  background-size: 22px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+}
 
-h1 {
+h2 {
   text-align: center;
+  margin-bottom: 2%;
+}
+
+.form-control{
+  margin-bottom: 3px;
+}
+
+#ajouterForm{
+  float: left;
+  width: 70%;
+}
+
+#ajouter{
+  width: 30%;
+  height: 93px;
+  background-color: #22364b;
+}
+
+#search{
+  width: 50%;
+  margin-left: 25%;
+}
+
+#nav{
+  text-align: center;
+  position: fixed;
+  bottom: 10px;
+  width:45%;
 }
 </style>
