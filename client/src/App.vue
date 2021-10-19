@@ -34,8 +34,9 @@ export default {
   border-color: #22364b;
   padding: 1%;
   width: 50%;
-  margin-bottom: 20px;
-
+  margin-bottom: 20%;
+  position: fixed;
+  z-index: 10;
 }
 
 #right_button{
@@ -46,6 +47,7 @@ export default {
 #left_button{
   border-right: solid;
   border-width: 1px;
+  left:0px;
 }
 
 .menu:hover{

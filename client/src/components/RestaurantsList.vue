@@ -21,18 +21,19 @@
 
     <h4>Ajouter un restaurant</h4>
     <form @submit.prevent="ajouterRestaurant($event)">
-      <label>
-        Nom : <input name="nom" type="text" required v-model="nom" />
-      </label>
-      <label>
-        Cuisine :
-        <input name="cuisine" type="text" required v-model="cuisine" />
-      </label>
-
-      <button>Ajouter</button>
+      <div class="form-group">
+        <input name="nom" class="form-control" placeholder="Nom du Restaurant" id="nom" type="text" required v-model="nom" />
+      </div>
+      <div class="form-group">
+        <input name="cuisine" class="form-control" placeholder="Type de Cuisine" id="cuisine" type="text" required v-model="cuisine" />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      
     </form>
 
-    <h4>Reschercher un restaurant</h4>
+    
+
+    <h4>Rechercher un restaurant</h4>
     <p>
       <input
         v-on:input="searchRestaurants()"
@@ -64,7 +65,7 @@
     </div>
 
     <div class="right-side">
-      <md-table v-model="restaurants" md-sort="name" md-sort-order="asc">
+      <md-table id="tab" v-model="restaurants" md-sort="name" md-sort-order="asc">
       <md-table-row>
         <md-table-head>Nom</md-table-head>
         <md-table-head>Cuisine</md-table-head>
@@ -234,13 +235,16 @@ export default {
   text-align: left;
   padding-left: 1vw;
   width: 30%;
+  margin-top: 5%;
 }
 
 .right-side{
   float: right;
-  padding-right: 1vw;
   width: 60%;
+  right: 1vw;
+  margin-top: 5%;
 }
+
 
 table {
   border: 1px solid black;
@@ -264,8 +268,7 @@ tr:hover {
 }
 
 input{
-  height: 25px;
-  border-radius: 50px;
+  height: 38px;
 }
 
 input:invalid {
