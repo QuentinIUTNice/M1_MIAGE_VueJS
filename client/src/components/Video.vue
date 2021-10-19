@@ -24,8 +24,7 @@ export default {
           // Nombre de photos récupérées par le fetch
           //
           let nbVideos = data.videos.length;
-console.log("NBV")
-console.log(nbVideos)
+          
           // Génération d'un nombre entre 0 et le nombre de photos récupérées
           //
           let random = Math.floor(Math.random() * (nbVideos - 0 + 1)) + 0;
@@ -40,10 +39,7 @@ console.log(nbVideos)
 
           // Ajout de la photo au HTML
           //
-          div.innerHTML +=
-            '<video width="320" height="240" controls><source src=' +
-            video.video_files[0].link +
-            "></video>";
+          div.innerHTML += '<video width="320" height="240" controls><source src=' + video.video_files[0].link + '></video>';
         });
     },
   },

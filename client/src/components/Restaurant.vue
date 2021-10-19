@@ -115,8 +115,6 @@ export default {
             this.center[0] = this.latitude;
             this.center[1] = this.longitude;
 
-            console.log(this.center);
-
             this.$refs.center.center = this.center;
             
             // Récupération des avis clients

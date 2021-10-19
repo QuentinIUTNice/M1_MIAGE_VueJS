@@ -48,8 +48,6 @@ export default {
     zoomUpdated(zoom) {
       this.zoom = zoom;
     },
-    
-    
   },
 };
 </script>
