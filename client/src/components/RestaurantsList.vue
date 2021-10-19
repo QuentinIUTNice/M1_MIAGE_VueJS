@@ -2,8 +2,6 @@
   <div class="page">
     <div class="left-side">
 
-    <br />
-
     <h2>Nombre de restaurants : {{ nbTotalRestaurants }}</h2>
     <h2>Nombre de pages : {{ nbTotalPages }}</h2>
     <h2>
@@ -12,16 +10,15 @@
         v-on:input="getRestaurantsFromServer()"
         type="range"
         min="1"
+        id="slider"
         :max="100"
         v-model="pageSize"
       />
       {{ pageSize }}
     </h2>
-    <br />
-    <br />
 
     <h2>Ajouter un restaurant:</h2>
-    <form @submit.prevent="ajouterRestaurant($event)">
+    <form id="form" @submit.prevent="ajouterRestaurant($event)">
       <div id="ajouterForm" class="form-group">
         <input name="nom" class="form-control" placeholder="Nom du Restaurant" id="nom" type="text" required v-model="nom" />
         <input name="cuisine" class="form-control" placeholder="Type de Cuisine" id="cuisine" type="text" required v-model="cuisine" />
@@ -30,11 +27,6 @@
       
     </form>
 
-    
-<br/>
-<br/>
-<br/>
-<br/>
     <h2>Rechercher un restaurant:</h2>
     <p>
       <input
@@ -254,6 +246,13 @@ export default {
   background-color: cadetblue;
 }
 
+#slider{
+  margin-bottom: 5%;
+}
+
+#form{
+  margin-bottom: 10%;
+}
 
 table {
   border: 1px solid black;
