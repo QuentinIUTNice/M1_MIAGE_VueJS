@@ -8,7 +8,6 @@
       class="map"
       ref="map"
       @update:zoom="zoomUpdated"
-      @update:center="centerUpdated"
     >
       <l-tile-layer :url="url"> </l-tile-layer>
 
@@ -49,9 +48,8 @@ export default {
     zoomUpdated(zoom) {
       this.zoom = zoom;
     },
-    centerUpdated(center) {
-      this.center = center;
-    },
+    
+    
   },
 };
 </script>
