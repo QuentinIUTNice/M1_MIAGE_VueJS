@@ -39,7 +39,7 @@ export default {
 
           // Ajout de la photo au HTML
           //
-          div.innerHTML += '<video width="320" height="240" controls><source src=' + video.video_files[0].link + '></video>';
+          div.innerHTML += '<video width="320" height="240" controls muted="false" autoplay loop="true"><source src=' + video.video_files[0].link + '></video>';
         });
     },
   },
