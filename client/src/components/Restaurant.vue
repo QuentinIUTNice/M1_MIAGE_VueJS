@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!--<div>
+    <div>
       <h1>Détail du restaurant</h1>
 
       <ul>
@@ -46,8 +46,6 @@
       <Video />
     </div>
     
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />-->
-    
     <br /><br />
 
     <div>
@@ -63,18 +61,18 @@
 </template>
 
 <script>
-/*import Map from './Map.vue';
+import Map from './Map.vue';
 import Picture from './Picture.vue';
-import Video from './Video.vue';*/
+import Video from './Video.vue';
 import Menu from './Menu.vue';
 import GastronomicMenu from './GastronomicMenu.vue';
 
 export default {
   name: "Restaurant",
   components: {
-    /*Map,
+    Map,
     Picture,
-    Video,*/
+    Video,
     Menu,
     GastronomicMenu,
   },
@@ -133,7 +131,7 @@ export default {
             this.center[0] = this.latitude;
             this.center[1] = this.longitude;
 
-            //this.$refs.center.center = this.center;
+            this.$refs.center.center = this.center;
             
             // Récupération des avis clients
             //
