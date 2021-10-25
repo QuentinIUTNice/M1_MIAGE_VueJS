@@ -43,6 +43,7 @@
     <h4>
     <md-button
       class="md-raised"
+      id="previous"
       v-on:click="previousPage()"
       :disabled="page === 0"
     >
@@ -53,6 +54,7 @@
 
     <md-button
       class="md-raised"
+      id="next"
       v-on:click="nextPage()"
       :disabled="page === nbTotalPages - 1"
     >
@@ -275,26 +277,28 @@ tr:hover {
 }
 
 input{
-  height: 3em;
+  height: 2.5vw;
   width: 80%;
 }
 
 input[id="search"] {
   
   background-image: url('../assets/Vector_search_icon.svg.png');
-  background-position: 10px 10px;
-  background-size: 22px;
+  background-position: 3% 50%;
+  background-size: 1vw;
   background-repeat: no-repeat;
   padding-left: 40px;
 }
 
 h2 {
+  font-size: 1.5vw;
   text-align: center;
   margin-bottom: 2%;
 }
 
 .form-control{
   margin-bottom: 0.2em;
+  font-size: 1vw;
 }
 
 #ajouterForm{
@@ -304,8 +308,9 @@ h2 {
 
 #ajouter{
   width: 30%;
-  height: 5em;
+  height: 5.2vw;
   background-color: #22364b;
+  font-size: 1.2vw;
 }
 
 #search{
@@ -317,6 +322,22 @@ h2 {
 #nav{
   text-align: center;
   width:100%;
-  
+  vertical-align: top;
+}
+
+#previous{
+  height: 2vw;
+  width: 10vw;
+  font-size: 0.9vw;
+}
+
+#next{
+  height: 2vw;
+  width: 10vw;
+  font-size: 0.9vw;
+}
+
+h4{
+  font-size: 1.5vw;
 }
 </style>
