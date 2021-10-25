@@ -1,5 +1,5 @@
 <template>
-  <div id="m"></div>
+  <div id="gm"></div>
 </template>
 
 <script>
@@ -9,9 +9,9 @@ export default {
   name: "Menu",
   data: function () {
     return {
-      starters: {},
-      dishes: {},
-      desserts: {},
+      gStarters: {},
+      gDishes: {},
+      gDesserts: {},
       tabRandom: [],
       menu: "",
     };
@@ -59,21 +59,21 @@ export default {
     },
     generateMenu() {
       return new Promise(resolve => {
-        let starter = this.meals.starters[this.tabRandom[0]];
-        let dish = this.meals.dishes[this.tabRandom[1]];
-        let dessert = this.meals.desserts[this.tabRandom[2]];
+        let gStarter = this.meals.gStarters[this.tabRandom[0]];
+        let gDish = this.meals.gDishes[this.tabRandom[1]];
+        let gDessert = this.meals.gDesserts[this.tabRandom[2]];
 
-        console.log(starter);
-        console.log(dish);
-        console.log(dessert);
+        console.log(gStarter);
+        console.log(gDish);
+        console.log(gDessert);
 
         this.menu = '<h1>Menu</h1>';
         this.menu += '<br />';
         this.menu += '<div><table>';
         this.menu += '<tr><th></th><th>Nom</th><th>Description</th><th>Image</th><th>Prix</th></tr>';
-        this.menu += '<tr><th>Entrée</th><td>' + starter.name + '</td><td>' + starter.description + '</td><td><img src=' + starter.picture + ' height="100"/></td><td>' + starter.price + '</td></tr>';
-        this.menu += '<tr><th>Plat</th><td>' + dish.name + '</td><td>' + dish.description + '</td><td><img src=' + dish.picture + ' /></td><td>' + dish.price + '</td></tr>';
-        this.menu += '<tr><th>Plat</th><td>' + dessert.name + '</td><td>' + dessert.description + '</td><td><img src=' + dessert.picture + ' /></td><td>' + dessert.price + '</td></tr>';
+        this.menu += '<tr><th>Entrée</th><td>' + gStarter.name + '</td><td>' + gStarter.description + '</td><td><img src=' + gStarter.picture + ' height="100"/></td><td>' + gStarter.price + '</td></tr>';
+        this.menu += '<tr><th>Plat</th><td>' + gDish.name + '</td><td>' + gDish.description + '</td><td><img src=' + gDish.picture + ' /></td><td>' + gDish.price + '</td></tr>';
+        this.menu += '<tr><th>Plat</th><td>' + gDessert.name + '</td><td>' + gDessert.description + '</td><td><img src=' + gDessert.picture + ' /></td><td>' + gDessert.price + '</td></tr>';
         this.menu += '</table></div>';
 
         console.log(this.menu);
@@ -83,7 +83,7 @@ export default {
     },
     displayMenu() {
       return new Promise(resolve => {
-          document.getElementById('m').innerHTML = this.menu;
+          document.getElementById('gm').innerHTML = this.menu;
 
           resolve('display resolved');
       });
