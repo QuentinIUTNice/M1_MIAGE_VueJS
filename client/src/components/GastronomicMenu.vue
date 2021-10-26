@@ -67,7 +67,7 @@ export default {
         console.log(gDish);
         console.log(gDessert);
 
-        this.menu = '<h1>Menu</h1>';
+        this.menu = '<h1>Gastronomic menu</h1>';
         this.menu += '<br />';
         this.menu += '<div><table>';
         this.menu += '<tr><th></th><th>Nom</th><th>Description</th><th>Image</th><th>Prix</th></tr>';

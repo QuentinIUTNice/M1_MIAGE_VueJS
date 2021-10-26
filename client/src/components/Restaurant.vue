@@ -1,15 +1,24 @@
 <template>
   <div>
     <div>
-      <h1>Détail du restaurant</h1>
+      <h1>{{ name }}</h1>
+      <h2>Type de cuisine : {{ cuisine }}</h2>
+    </div>
 
-      <ul>
-        <li>ID : {{ id }}</li>
-        <li>Nom : {{ name }}</li>
-        <li>Cuisine : {{ cuisine }}</li>
-        <li>Adresse : {{ adresse }}</li>
-        <li>
-          Avis des clients :
+
+    
+    <div id="left-side">
+      <div id="photo">
+        <Picture></Picture>
+      </div>
+      <div id="video">
+        <Video></Video>
+      </div>
+
+      
+
+      <div id="avis">
+          <h2>Avis des clients :</h2>
 
           <md-table v-model="grades" md-sort="name" md-sort-order="asc">
             <md-table-row>
@@ -30,33 +39,33 @@
               </md-table-cell>
             </md-table-row>
           </md-table>
-        </li>
-      </ul>
+      </div>
+
+      <div id="map">
+        <h2>Ou trouver le restaurant ?</h2>
+         <Map ref="center" />
+      </div>
+      <div id="info">
+        <p>Adresse : {{ adresse }}</p>
+      </div>
     </div>
 
-    <div id="map">
-      <Map ref="center" />
-    </div>
-
-    <div id="carte">
-      <Picture />
-    </div>
-
-    <div>
-      <Video />
-    </div>
+    
     
     <br /><br />
 
-    <div>
-      <Menu />
+    <div id="right-side">
+      <div id="menu">  
+        <Menu />
+      </div>
+      <div id="gastro">
+        <GastronomicMenu />
+      </div>
     </div>
 
     <br /><br />
 
-    <div>
-      <GastronomicMenu />
-    </div>
+    
   </div>
 </template>
 
@@ -156,17 +165,58 @@ export default {
 </script>
 
 <style scoped>
-ul,
-li {
-  text-align: left;
-}
 
 #map{
+  text-align: center;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 5%;
+}
+
+#video{
+  width: 50%;
+  margin-left: 50%;
+}
+
+#photo{
+  width: 50%;
+  height: 0.005vw;
+
+}
+
+#left-side{
   float: left;
-  margin-left: 10%;
+  width: 50%;
+  text-align: center;
+  margin-top: 5%;
 }
-#carte{
+
+#right-side{
   float: right;
-   margin-right: 10%;
+  width: 50%;
+  text-align: center;
+  margin-bottom: 15%; 
 }
+
+h1{
+  margin-top: 5%;
+  font-size: 3vw;
+}
+
+#info{
+  margin-top: 35%;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+#avis{
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 10%;
+}
+
+p{
+  font-size: 0.85vw;
+}
+
 </style>

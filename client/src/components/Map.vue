@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h1>Carte</h1>
-
+    
     <l-map
       :center="center"
       :zoom="zoom"
@@ -55,9 +54,10 @@ export default {
 <style scoped>
 .map {
   position: absolute;
-  width: 400px;
-  height: 200px;
+  width: 30vw;
+  height: 15vw;
   overflow: hidden;
+  z-index: 9;
 }
 
 .restaurant-icon {
