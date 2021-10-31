@@ -5,8 +5,6 @@
       <h2>Type de cuisine : {{ cuisine }}</h2>
     </div>
 
-
-    
     <div id="left-side">
       <div id="photo">
         <Picture></Picture>
@@ -15,12 +13,33 @@
         <Video></Video>
       </div>
 
-      
+      <div id="map">
+        <h2>Où trouver le restaurant ?</h2>
+         <Map ref="center" />
+      </div>
+      <div id="info">
+        <p>Adresse : {{ adresse }}</p>
+      </div>
+    </div>
 
-      <div id="avis">
-          <h2>Avis des clients :</h2>
-
-          <md-table v-model="grades" md-sort="name" md-sort-order="asc">
+    <div id="right-side">
+      <v-expansion-panels>
+        <v-expansion-panel>
+          <v-expansion-panel-header>Menu</v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <Menu />
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+        <v-expansion-panel>
+          <v-expansion-panel-header>Menu gastronomique</v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <GastronomicMenu />
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+        <v-expansion-panel>
+          <v-expansion-panel-header>Avis des clients</v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <md-table v-model="grades" md-sort="name" md-sort-order="asc">
             <md-table-row>
               <md-table-head>Date</md-table-head>
               <md-table-head>Note</md-table-head>
@@ -39,33 +58,10 @@
               </md-table-cell>
             </md-table-row>
           </md-table>
-      </div>
-
-      <div id="map">
-        <h2>Ou trouver le restaurant ?</h2>
-         <Map ref="center" />
-      </div>
-      <div id="info">
-        <p>Adresse : {{ adresse }}</p>
-      </div>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
     </div>
-
-    
-    
-    <br /><br />
-
-    <div id="right-side">
-      <div id="menu">  
-        <Menu />
-      </div>
-      <div id="gastro">
-        <GastronomicMenu />
-      </div>
-    </div>
-
-    <br /><br />
-
-    
   </div>
 </template>
 
