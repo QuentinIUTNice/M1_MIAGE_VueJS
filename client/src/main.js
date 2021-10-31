@@ -12,6 +12,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import Accueil from './components/Accueil.vue';
 import RestaurantsList from './components/RestaurantsList.vue';
 import Restaurant from './components/Restaurant.vue';
+import vuetify from './plugins/vuetify'
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
@@ -40,5 +41,6 @@ const router = new VueRouter({
 
 new Vue({
   router,
-  render: h => h(App),
+  vuetify,
+  render: h => h(App)
 }).$mount('#app')
