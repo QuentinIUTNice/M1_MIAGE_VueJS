@@ -21,25 +21,14 @@ export default {
   },
   methods: {
     async main() {
-      let result;
-
-      result = await this.assignData();
-      console.log(result);
-
-      result = await this.generateRandoms();
-      console.log(result);
-      
-      result = await this.generateMenu();
-      console.log(result);
-
-      result = await this.displayMenu();
-      console.log(result);
+      await this.assignData();
+      await this.generateRandoms();
+      await this.generateMenu();
+      await this.displayMenu();
     },
     assignData() {
       return new Promise(resolve => {
         this.meals = mealsData;
-
-        console.log(this.meals);
 
         resolve('data resolved');
       });
@@ -48,10 +37,6 @@ export default {
       return new Promise(resolve => {
         for(let i = 0; i < 3; i++) {
           this.tabRandom.push(Math.floor(Math.random() * (5)));
-        }
-
-        for(let i = 0; i < this.tabRandom.length; i++) {
-          console.log(this.tabRandom[i]);
         }
 
         resolve('randoms resolved');
@@ -63,11 +48,6 @@ export default {
         let dish = this.meals.dishes[this.tabRandom[1]];
         let dessert = this.meals.desserts[this.tabRandom[2]];
 
-        console.log(starter);
-        console.log(dish);
-        console.log(dessert);
-
-        this.menu = '<h1>Menu</h1>';
         this.menu += '<br />';
         this.menu += '<div><table>';
         this.menu += '<tr><th></th><th>Nom</th><th>Description</th><th>Image</th><th>Prix</th></tr>';
@@ -75,8 +55,6 @@ export default {
         this.menu += '<tr><th>Plat</th><td>' + dish.name + '</td><td>' + dish.description + '</td><td><img src=' + dish.picture + ' /></td><td>' + dish.price + '</td></tr>';
         this.menu += '<tr><th>Plat</th><td>' + dessert.name + '</td><td>' + dessert.description + '</td><td><img src=' + dessert.picture + ' /></td><td>' + dessert.price + '</td></tr>';
         this.menu += '</table></div>';
-
-        console.log(this.menu);
 
         resolve('menu resolved');
       });
