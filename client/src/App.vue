@@ -4,7 +4,10 @@
       <span class="menu" id="left_button" @click="navigate" @keypress.enter="navigate" role="link">ACCUEIL</span>
     </router-link>
     <router-link to="/restaurants" custom v-slot="{ navigate }">
-      <span class="menu" id="right_button" @click="navigate" @keypress.enter="navigate" role="link">TROUVER UN RESTAURANT</span>
+      <span class="menu" id="middle_button" @click="navigate" @keypress.enter="navigate" role="link">TROUVER UN RESTAURANT</span>
+    </router-link>
+    <router-link to="/restaurants" custom v-slot="{ navigate }">
+      <span class="menu" id="right_button" @click="navigate" @keypress.enter="navigate" role="link">PANIER</span>
     </router-link>
 
     <br /><br />
@@ -21,23 +24,23 @@ export default {
 </script>
 
 <style>
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 100%;
   text-align: center;
-  color: #22364b;
+  color: black;
+  width: 100%;
   
 }
 
 .menu{
   font-size: 1.5vw;
-  background-color: #E8694D;
+  background-color: #8B4139;
   border-style: none;
-  border-color: #22364b;
   padding: 1%;
-  width: 50%;
   margin-bottom: 20%;
   position: fixed;
   z-index: 10;
@@ -45,16 +48,40 @@ export default {
 
 #right_button{
   border-left: solid;
-  border-width: 1px;
+  border-bottom: solid;
+  border-width: 2px;
+  border-color: white;
+  color:white;
+  right: 0px;
+  width: 34%;
+}
+
+#middle_button{
+  border-left: solid;
+  border-right: solid;
+  border-bottom: solid;
+  border-width: 2px;
+  left:33%;
+  border-color: white;
+  color:white;
+  
+  width: 33%;
 }
 
 #left_button{
   border-right: solid;
-  border-width: 1px;
+  border-bottom: solid;
+  border-width: 2px;
   left:0px;
+  border-color: white;
+  color:white;
+  
+  width: 33%;
 }
 
+
+
 .menu:hover{
-  background-color: #eb917d;
+  background-color: #8d4f48;
 }
 </style>
