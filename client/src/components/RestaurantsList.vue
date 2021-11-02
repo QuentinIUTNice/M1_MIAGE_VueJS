@@ -220,8 +220,6 @@ h2 {
 #table {
   float: right;
   border: 1px solid black;
-  width: 100%;
-  height: 10%;
   border-collapse: collapse;
 }
 </style>
