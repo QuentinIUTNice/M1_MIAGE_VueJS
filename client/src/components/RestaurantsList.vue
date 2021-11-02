@@ -311,6 +311,11 @@ h2 {
   height: 5.2vw;
   background-color: #22364b;
   font-size: 1.2vw;
+  color: white;
+}
+
+#ajouter:hover{
+  background-color: #355374;
 }
 
 #search{
