@@ -1,5 +1,5 @@
 <template>
-  <div id="m"></div>
+    <div id="m"></div>
 </template>
 
 <script>
@@ -14,10 +14,20 @@ export default {
       desserts: {},
       tabRandom: [],
       menu: "",
+      price: 0,
     };
   },
   mounted() {
     this.main();
+  },
+  watch: {
+    price: {
+      handler (newVal) {
+        if(newVal > 0) {
+          this.$emit('rMenuPrice', { price: this.price });
+        }
+      }
+    }
   },
   methods: {
     async main() {
@@ -56,6 +66,10 @@ export default {
         this.menu += '<tr><th>Plat</th><td>' + dessert.name + '</td><td>' + dessert.description + '</td><td><img src=' + dessert.picture + ' /></td><td>' + dessert.price + '</td></tr>';
         this.menu += '</table></div>';
 
+        this.price = parseInt(starter.price.substring(0, starter.price.length)) + parseInt(dish.price.substring(0, dish.price.length)) + parseInt(dessert.price.substring(0, dessert.price.length));
+
+        console.log(this.price);
+
         resolve('menu resolved');
       });
     },
@@ -65,7 +79,7 @@ export default {
 
           resolve('display resolved');
       });
-    }
+    },
   },
 };
 </script>

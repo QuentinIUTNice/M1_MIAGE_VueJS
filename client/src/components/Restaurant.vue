@@ -27,13 +27,25 @@
         <v-expansion-panel>
           <v-expansion-panel-header>Menu</v-expansion-panel-header>
           <v-expansion-panel-content>
-            <Menu />
+            <Menu @rMenuPrice="setMenuPrice"/>
+            <br />
+            <v-btn class="addToCart" color="success"
+                   @click="addMenuToCart">
+              <v-icon left>mdi-cart</v-icon>
+              Ajouter au panier
+            </v-btn>
           </v-expansion-panel-content>
         </v-expansion-panel>
         <v-expansion-panel>
           <v-expansion-panel-header>Menu gastronomique</v-expansion-panel-header>
           <v-expansion-panel-content>
-            <GastronomicMenu />
+            <GastronomicMenu @rGastronomicMenuPrice="setGastronomicMenuPrice"/>
+            <br />
+            <v-btn class="addToCart" color="success"
+                   @click="addGastronomicMenuToCart">
+              <v-icon left>mdi-cart</v-icon>
+              Ajouter au panier
+            </v-btn>
           </v-expansion-panel-content>
         </v-expansion-panel>
         <v-expansion-panel>
@@ -92,6 +104,9 @@ export default {
       center: [0, 0],
       grades: [],
       date: [],
+      cart: "",
+      menuPrice: 0,
+      gastronomicMenuPrice: 0,
     };
   },
   computed: {
@@ -156,6 +171,20 @@ export default {
           console.log(err);
         });
     },
+    setMenuPrice(payload) {
+      this.menuPrice = payload.price;
+    },
+    addMenuToCart() {
+      this.cart += this.name + "-m-" + this.menuPrice + "|";
+      console.log(this.cart);
+    },
+    setGastronomicMenuPrice(payload) {
+      this.menuPrice = payload.price;
+    },
+    addGastronomicMenuToCart() {
+      this.cart += this.name + "-gm-" + this.menuPrice + "|";
+      console.log(this.cart);
+    },
   },
 };
 </script>
@@ -213,6 +242,11 @@ h1{
 
 p{
   font-size: 0.85vw;
+}
+
+.addToCart {
+  float: right;
+  color: green;
 }
 
 </style>

@@ -14,10 +14,20 @@ export default {
       gDesserts: {},
       tabRandom: [],
       menu: "",
+      price: 0,
     };
   },
   mounted() {
     this.main();
+  },
+  watch: {
+    price: {
+      handler (newVal) {
+        if(newVal > 0) {
+          this.$emit('rGastronomicMenuPrice', { price: this.price });
+        }
+      }
+    }
   },
   methods: {
     async main() {
@@ -55,6 +65,12 @@ export default {
         this.menu += '<tr><th>Plat</th><td>' + gDish.name + '</td><td>' + gDish.description + '</td><td><img src=' + gDish.picture + ' /></td><td>' + gDish.price + '</td></tr>';
         this.menu += '<tr><th>Plat</th><td>' + gDessert.name + '</td><td>' + gDessert.description + '</td><td><img src=' + gDessert.picture + ' /></td><td>' + gDessert.price + '</td></tr>';
         this.menu += '</table></div>';
+
+        this.price = parseInt(gStarter.price.substring(0, gStarter.price.length)) + 
+                     parseInt(gDish.price.substring(0, gDish.price.length)) + 
+                     parseInt(gDessert.price.substring(0, gDessert.price.length));
+
+        console.log(this.price);
 
         resolve('menu resolved');
       });
