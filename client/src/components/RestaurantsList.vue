@@ -1,164 +1,136 @@
 <template>
   <div class="page">
     <div class="left-side">
+      <h2>Ajouter un restaurant:</h2>
+      <v-form
+        ref="form"
+        lazy-validation
+        @submit.prevent="ajouterRestaurant($event)">
+        <v-text-field
+          id="nom"
+          name="nom"
+          type="text"
+          v-model="nom"
+          :rules="nameRules"
+          label="Nom du restaurant"
+          required></v-text-field>
 
-    <h2>Nombre de restaurants : {{ nbTotalRestaurants }}</h2>
-    <h2>Nombre de pages : {{ nbTotalPages }}</h2>
-    <h2>
-      Nombre de restaurants par pages :
-      <input
-        v-on:input="getRestaurantsFromServer()"
-        type="range"
-        min="1"
-        id="slider"
-        :max="100"
-        v-model="pageSize"
-      />
-      {{ pageSize }}
-    </h2>
+        <v-text-field
+          id="cuisine"
+          name="cuisine"
+          type="text"
+          v-model="cuisine"
+          :rules="cuisineRules"
+          label="Type de cuisine"
+          required></v-text-field>
 
-    <h2>Ajouter un restaurant:</h2>
-    <form id="form" @submit.prevent="ajouterRestaurant($event)">
-      <div id="ajouterForm" class="form-group">
-        <input name="nom" class="form-control" placeholder="Nom du Restaurant" id="nom" type="text" required v-model="nom" />
-        <input name="cuisine" class="form-control" placeholder="Type de Cuisine" id="cuisine" type="text" required v-model="cuisine" />
-      </div>
-      <button type="submit" class="btn btn-primary btn-lg" id="ajouter">Ajouter le restaurant</button>
-      
-    </form>
+        <v-btn id="formValidate"
+          class="mr-4"
+          type="submit">
+          Ajouter
+        </v-btn>
 
-    <h2>Rechercher un restaurant:</h2>
-    <p>
-      <input
-        v-on:input="searchRestaurants()"
-
-        type="text"
-        class="form-control"
-        id="search"
-        placeholder="Rechercher..."
-        v-model="searchedRestaurant"
-      />
-    </p>
-    <div id="nav">
-    <h4>
-    <md-button
-      class="md-raised"
-      id="previous"
-      v-on:click="previousPage()"
-      :disabled="page === 0"
-    >
-      Page précédente
-    </md-button>
-
-    - Page : {{ page }} -
-
-    <md-button
-      class="md-raised"
-      id="next"
-      v-on:click="nextPage()"
-      :disabled="page === nbTotalPages - 1"
-    >
-      Page suivante
-    </md-button>
-    </h4>
+        <v-btn id="formReset"
+          class="mr-4"
+          @click="resetForm">
+          Vider le formulaire
+        </v-btn>
+      </v-form>
     </div>
 
-    <br /><br />
-    </div>
-
-    <div class="right-side">
-      <md-table id="tab" v-model="restaurants" md-sort="name" md-sort-order="asc">
-      <md-table-row>
-        <md-table-head>Nom</md-table-head>
-        <md-table-head>Cuisine</md-table-head>
-      </md-table-row>
-
-      <md-table-row
-        slot="md-table-row"
-        slot-scope="{ item, index }"
-        :style="{ backgroundColor: getColor(index) }"
-      >
-        <md-table-cell md-label="Nom" md-sort-by="name">{{
-          item.name
-        }}</md-table-cell>
-        <md-table-cell md-label="Cuisine" md-sort-by="cuisine">{{
-          item.cuisine
-        }}</md-table-cell>
-        <md-table-cell
-          ><md-button class="md-raised md-primary" :to="'/restaurants/' + item._id"
-            >Détail</md-button
-          ></md-table-cell
-        >
-        <md-table-cell
-          ><md-button
-            class="md-raised md-accent"
-            @click="supprimerRestaurant(item)"
-            >Supprimer</md-button
-          ></md-table-cell
-        >
-      </md-table-row>
-    </md-table>
+    <div class="right-side" data-app>
+      <v-card id="table">
+        <v-card-title>
+          <v-text-field
+            v-model="search"
+            append-icon="mdi-magnify"
+            label="Search"
+            single-line
+            hide-details
+          ></v-text-field>
+        </v-card-title>
+        <v-data-table
+          loading
+          loading-text="Chargement en cours..."
+          :headers="headers"
+          :items="restaurants"
+          :items-per-page="10"
+          :search="search">
+          <template v-slot:item="row">
+            <tr>
+              <td>{{ row.item.name }}</td>
+              <td>{{ row.item.cuisine }}</td>
+              <td><md-button class="md-raised md-primary" :to="'/restaurants/' + row.item._id">Détail</md-button></td>
+              <td><md-button class="md-raised md-accent" @click="supprimerRestaurant(row.item)">Supprimer</md-button></td>
+            </tr>
+          </template>
+        </v-data-table>
+      </v-card>
     </div>
   </div>
-  
-
-
 </template>
 
 <script>
-import _ from "lodash";
-
 export default {
   name: "RestaurantsList",
   data: function () {
     return {
-      restaurants: [],
       nom: "",
+      nameRules: [
+        v => !!v || 'Name is required',
+      ],
       cuisine: "",
-      nbTotalRestaurants: 0,
-      page: 0,
-      pageSize: 10,
-      nbTotalPages: 0,
+      cuisineRules: [
+        v => !!v || 'E-mail is required',
+      ],
+
+      search: "",
+      headers: [
+        { text: 'Nom', align: 'start', value: 'name', },
+        { text: 'Cuisine', align: 'start', value: 'cuisine', },
+        { text: 'Détails', align: 'start', value: 'cuisine' },
+        { text: 'Supprimer', align: 'start', },
+      ],
+      restaurants: [],
+      /*nom: "",
+      cuisine: "",*/
       msg: "",
-      searchedRestaurant: "",
     };
   },
   mounted() {
-    console.log("Récupération des restaurants...");
     this.getRestaurantsFromServer();
-    console.log("Restaurants chargés !");
   },
   methods: {
+    validate () {
+      this.$refs.form.validate()
+    },
+    resetForm () {
+      this.$refs.form.reset()
+    },
     getRestaurantsFromServer() {
       let url = "http://localhost:8080/api/restaurants?";
 
       url += "page=" + this.page;
       url += "&pagesize=" + this.pageSize;
-      url += "&name=" + this.searchedRestaurant;
 
       fetch(url)
         .then((responseJSON) => {
           responseJSON.json().then((res) => {
             this.restaurants = res.data;
-            this.nbTotalRestaurants = res.count;
-            this.nbTotalPages = Math.round(
-              this.nbTotalRestaurants / this.pageSize
-            );
           });
         })
         .catch(function (err) {
           console.log(err);
         });
     },
-    searchRestaurants: _.debounce(function () {
-      this.getRestaurantsFromServer();
-    }, 300),
     ajouterRestaurant($event) {
       // Récupération du formulaire.
       // Pas besoin de document.querySelector ou
       //               document.getElementById
       // puisque c'est le formulaire qui a généré l'événement
       let form = $event.target;
+
+      console.log(form);
 
       // Récupération des valeurs des champs du formulaire
       // en prévision d'un envoi multipart en ajax/fetch
@@ -175,6 +147,8 @@ export default {
             // Maintenant res est un vrai objet JavaScript
             this.msg = res.msg;
 
+            console.log(this.msg)
+
             this.getRestaurantsFromServer();
           });
         })
@@ -184,6 +158,8 @@ export default {
 
       this.nom = "";
       this.cuisine = "";
+
+      this.resetForm();
     },
     supprimerRestaurant(r) {
       let url = "http://localhost:8080/api/restaurants/";
@@ -205,89 +181,19 @@ export default {
           console.log(err);
         });
     },
-    previousPage() {
-      if (this.page > 0) {
-        this.page--;
-        this.getRestaurantsFromServer();
-      } else {
-        console.log("Première page atteinte");
-      }
-    },
-    nextPage() {
-      if (this.page < this.nbTotalPages) {
-        this.page++;
-        this.getRestaurantsFromServer();
-      } else {
-        console.log("Dernière page atteinte");
-      }
-    },
-    getColor(index) {
-      return index % 2;
-    },
   },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-  
-
 .left-side{
   float: left;
   position: fixed;
   text-align: center;
-  width: 45%;
+  width: 33%;
   margin-top: 5%;
   margin-left: 2.5%;
-}
-
-.right-side{
-  float: right;
-  width: 50%;
-  margin-top: 5%;
-  background-color: cadetblue;
-}
-
-#slider{
-  margin-bottom: 5%;
-}
-
-#form{
-  margin-bottom: 10%;
-}
-
-table {
-  border: 1px solid black;
-  width: 100%;
-  border-collapse: collapse;
-}
-
-tr,
-td {
-  border: 1px solid black;
-}
-
-td {
-  padding: 5px;
-}
-
-tr:hover {
-  background-color: rgb(230, 228, 228);
-  border-color: #22364b;
-}
-
-input{
-  height: 2.5vw;
-  width: 80%;
-}
-
-input[id="search"] {
-  
-  background-image: url('../assets/Vector_search_icon.svg.png');
-  background-position: 3% 50%;
-  background-size: 1vw;
-  background-repeat: no-repeat;
-  padding-left: 40px;
 }
 
 h2 {
@@ -296,53 +202,26 @@ h2 {
   margin-bottom: 2%;
 }
 
-.form-control{
-  margin-bottom: 0.2em;
-  font-size: 1vw;
+#formValidate {
+  background-color: green;
 }
 
-#ajouterForm{
-  float: left;
-  width: 70%;
+#formReset {
+  background-color: orange;
 }
 
-#ajouter{
-  width: 30%;
-  height: 5.2vw;
-  background-color: #22364b;
-  font-size: 1.2vw;
-  color: white;
+.right-side{
+  float: right;
+  width: 60%;
+  margin-top: 2%;
+  margin-right: 2%;
 }
 
-#ajouter:hover{
-  background-color: #355374;
-}
-
-#search{
-  width: 50%;
-  margin-left: 25%;
-  margin-bottom: 12.5%;
-}
-
-#nav{
-  text-align: center;
-  width:100%;
-  vertical-align: top;
-}
-
-#previous{
-  height: 2vw;
-  width: 10vw;
-  font-size: 0.9vw;
-}
-
-#next{
-  height: 2vw;
-  width: 10vw;
-  font-size: 0.9vw;
-}
-
-h4{
-  font-size: 1.5vw;
+#table {
+  float: right;
+  border: 1px solid black;
+  width: 100%;
+  height: 10%;
+  border-collapse: collapse;
 }
 </style>
