@@ -219,6 +219,7 @@ h2 {
 
 #table {
   float: right;
+  width: 100%;
   border: 1px solid black;
   border-collapse: collapse;
 }
