@@ -1,25 +1,20 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import App from './App.vue';
 
-import VueMaterial from 'vue-material'
-import 'vue-material/dist/vue-material.min.css'
-import 'vue-material/dist/theme/default.css'
-import VueRouter from 'vue-router'
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import VueRouter from 'vue-router';
+import VueMaterial from 'vue-material';
+import 'vue-material/dist/vue-material.min.css';
+import 'vue-material/dist/theme/default.css';
+import vuetify from './plugins/vuetify';
 
 import Accueil from './components/Accueil.vue';
 import RestaurantsList from './components/RestaurantsList.vue';
 import Restaurant from './components/Restaurant.vue';
-import vuetify from './plugins/vuetify'
-
-Vue.use(BootstrapVue)
-Vue.use(IconsPlugin)
 
 Vue.config.productionTip = false
-Vue.use(VueMaterial)
+
 Vue.use(VueRouter)
+Vue.use(VueMaterial)
 
 const router = new VueRouter({
   routes: [
