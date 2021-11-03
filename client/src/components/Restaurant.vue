@@ -76,6 +76,34 @@
           </v-expansion-panel-content>
         </v-expansion-panel>
       </v-expansion-panels>
+
+      <br />
+
+      <div class="text-center">
+        <v-btn
+          dark
+          color="red darken-2"
+          @click="snackbar = true">
+          Panier
+        </v-btn>
+
+        <v-snackbar
+          id="snackbar"
+          v-model="snackbar"
+          :multi-line="multiLine">
+          <p id="cartContent"></p>
+
+          <template v-slot:action="{ attrs }">
+            <v-btn
+              color="red"
+              text
+              v-bind="attrs"
+              @click="snackbar = false">
+              Fermer
+            </v-btn>
+          </template>
+        </v-snackbar>
+      </div>
     </div>
   </div>
 </template>
@@ -107,9 +135,11 @@ export default {
       center: [0, 0],
       grades: [],
       date: [],
-      cart: "",
       menuPrice: 0,
       gastronomicMenuPrice: 0,
+      multiLine: true,
+      snackbar: false,
+      cart: "",
     };
   },
   computed: {
@@ -178,24 +208,25 @@ export default {
       this.menuPrice = payload.price;
     },
     addMenuToCart() {
-      this.cart += this.name + "-m-" + this.menuPrice + "|";
-      console.log(this.cart);
+      let newNode = document.createElement('p');
+      newNode.innerHTML = this.name + " | Menu | " + this.menuPrice + "€";
+
+      document.getElementById("cartContent").prepend(newNode);
     },
     setGastronomicMenuPrice(payload) {
       this.menuPrice = payload.price;
     },
     addGastronomicMenuToCart() {
-      this.cart += this.name + "-gm-" + this.menuPrice + "|";
-      console.log(this.cart);
+      let newNode = document.createElement('p');
+      newNode.innerHTML = this.name + " | Menu Gastronomique | " + this.menuPrice + "€";
+
+      document.getElementById("cartContent").prepend(newNode);
     },
   },
 };
 </script>
 
 <style scoped>
-
-
-
 #video{
   float: right;
   margin-top: 5%;
@@ -247,7 +278,6 @@ h1{
   float: left;
   margin-top: 11%;
   margin-left: 10%;
-  position: fixed;
   font-size: 2vw;
   color: #32424F;
 }
@@ -271,7 +301,7 @@ p{
 
 .addToCart {
   float: right;
-  color: green;
+  background-color: green;
 }
 
 #pannel{
@@ -280,9 +310,7 @@ p{
   border-color: #32424F;
 }
 
-
-
-#header2{
+#header2 {
   border-style: solid;
   border-width: 0.5vw;
   border-radius: 3px;
@@ -292,7 +320,4 @@ p{
   border-color: #32424F;
   font-style: oblique;
 }
-
-
-
 </style>

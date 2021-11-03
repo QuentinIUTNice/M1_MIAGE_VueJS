@@ -130,8 +130,6 @@ export default {
       // puisque c'est le formulaire qui a généré l'événement
       let form = $event.target;
 
-      console.log(form);
-
       // Récupération des valeurs des champs du formulaire
       // en prévision d'un envoi multipart en ajax/fetch
       let donneesFormulaire = new FormData(form);
@@ -146,8 +144,6 @@ export default {
           responseJSON.json().then((res) => {
             // Maintenant res est un vrai objet JavaScript
             this.msg = res.msg;
-
-            console.log(this.msg)
 
             this.getRestaurantsFromServer();
           });

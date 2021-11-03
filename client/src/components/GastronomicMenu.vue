@@ -70,8 +70,6 @@ export default {
                      parseInt(gDish.price.substring(0, gDish.price.length)) + 
                      parseInt(gDessert.price.substring(0, gDessert.price.length));
 
-        console.log(this.price);
-
         resolve('menu resolved');
       });
     },

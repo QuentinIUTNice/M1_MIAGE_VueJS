@@ -66,9 +66,9 @@ export default {
         this.menu += '<tr><th>Dessert</th><td>' + dessert.name + '</td><td><img src=' + dessert.picture + ' /></td><td>' + dessert.price + '</td></tr>';
         this.menu += '</table></div>';
 
-        this.price = parseInt(starter.price.substring(0, starter.price.length)) + parseInt(dish.price.substring(0, dish.price.length)) + parseInt(dessert.price.substring(0, dessert.price.length));
-
-        console.log(this.price);
+        this.price = parseInt(starter.price.substring(0, starter.price.length)) + 
+                     parseInt(dish.price.substring(0, dish.price.length)) + 
+                     parseInt(dessert.price.substring(0, dessert.price.length));
 
         resolve('menu resolved');
       });
