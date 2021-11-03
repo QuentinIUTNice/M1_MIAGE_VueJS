@@ -4,10 +4,7 @@
       <span class="menu" id="left_button" @click="navigate" @keypress.enter="navigate" role="link">ACCUEIL</span>
     </router-link>
     <router-link to="/restaurants" custom v-slot="{ navigate }">
-      <span class="menu" id="middle_button" @click="navigate" @keypress.enter="navigate" role="link">TROUVER UN RESTAURANT</span>
-    </router-link>
-    <router-link to="/restaurants" custom v-slot="{ navigate }">
-      <span class="menu" id="right_button" @click="navigate" @keypress.enter="navigate" role="link"> </span>
+      <span class="menu" id="right_button" @click="navigate" @keypress.enter="navigate" role="link">TROUVER UN RESTAURANT</span>
     </router-link>
 
     <br /><br />
@@ -53,25 +50,10 @@ export default {
   border-color: white;
   color:white;
   right: 0px;
-  width: 10%;
-  background-image: url("assets/cart.png");
-  background-size: 30%;
-  background-position: 50%,50%;
+  width: 50%;
   height: 4vw;
 }
 
-#middle_button{
-  border-left: solid;
-  border-right: solid;
-  border-bottom: solid;
-  border-width: 2px;
-  left:45%;
-  border-color: white;
-  color:white;
-  
-  width: 45%;
-  height: 4vw;
-}
 
 #left_button{
   border-right: solid;
@@ -80,9 +62,9 @@ export default {
   left:0px;
   border-color: white;
   color:white;
-  height: 4vw;
   
-  width: 45%;
+  width: 50%;
+  height: 4vw;
 }
 
 #right_button:hover{

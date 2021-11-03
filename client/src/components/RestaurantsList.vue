@@ -187,9 +187,9 @@ export default {
   float: left;
   position: fixed;
   text-align: center;
-  width: 33%;
+  width: 46%;
   margin-top: 5%;
-  margin-left: 2.5%;
+  margin-left: 2%;
 }
 
 h2 {
@@ -200,18 +200,22 @@ h2 {
 }
 
 #formValidate {
-  background-color: green;
   margin-right: 1%;
+   height: 3vw;
+  background-color: #8B4139;
+  color: white;
 }
 
 #formReset {
-  background-color: orange;
+ height: 3vw;
+  background-color: #32424F;
+  color: white;
   margin-left: 1%;
 }
 
 .right-side{
   float: right;
-  width: 53%;
+  width: 46%;
   margin-top: 5%;
   margin-right: 2%;
 }

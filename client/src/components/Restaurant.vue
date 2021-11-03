@@ -2,7 +2,10 @@
   <div>
     <div id="header1">
       <h1>{{ name }}</h1>
-      <h2 id="type">Type de cuisine : {{ cuisine }}</h2>
+      <div id="type">
+        <h2 >Type de cuisine : {{ cuisine }}</h2>
+      </div>
+      
       <div id="photo">
         <Picture></Picture>
       </div>
@@ -32,7 +35,7 @@
           <v-expansion-panel-content>
             <Menu @rMenuPrice="setMenuPrice"/>
             <br />
-            <v-btn class="addToCart" color="success"
+            <v-btn id="ajouterPanier" class="addToCart" color="success"
                    @click="addMenuToCart">
               <v-icon left>mdi-cart</v-icon>
               Ajouter au panier
@@ -44,7 +47,7 @@
           <v-expansion-panel-content>
             <GastronomicMenu @rGastronomicMenuPrice="setGastronomicMenuPrice"/>
             <br />
-            <v-btn class="addToCart" color="success"
+            <v-btn id="ajouterPanier2" class="addToCart" color="success"
                    @click="addGastronomicMenuToCart">
               <v-icon left>mdi-cart</v-icon>
               Ajouter au panier
@@ -81,9 +84,11 @@
 
       <div class="text-center">
         <v-btn
+          id="afficherPanier"
           dark
           color="red darken-2"
           @click="snackbar = true">
+          <v-icon left>mdi-cart</v-icon>
           Panier
         </v-btn>
 
@@ -275,10 +280,11 @@ h1{
 }
 
 #type{
+  position: absolute;
   float: left;
-  margin-top: 11%;
   margin-left: 10%;
-  font-size: 2vw;
+  margin-top: 11%;
+  font-size: 1vw;
   color: #32424F;
 }
 
@@ -319,5 +325,22 @@ p{
   margin-right: 25%;
   border-color: #32424F;
   font-style: oblique;
+}
+
+#ajouterPanier{
+  background-color: #8B4139;
+  height: 3vw;
+  margin-top: 2%;
+}
+
+#ajouterPanier2{
+  background-color: #8B4139;
+  height: 3vw;
+  margin-top: 2%;
+}
+
+#afficherPanier{
+  height: 3vw;
+  background-color: #32424F;
 }
 </style>
