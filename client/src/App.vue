@@ -7,7 +7,7 @@
       <span class="menu" id="middle_button" @click="navigate" @keypress.enter="navigate" role="link">TROUVER UN RESTAURANT</span>
     </router-link>
     <router-link to="/restaurants" custom v-slot="{ navigate }">
-      <span class="menu" id="right_button" @click="navigate" @keypress.enter="navigate" role="link">PANIER</span>
+      <span class="menu" id="right_button" @click="navigate" @keypress.enter="navigate" role="link"> </span>
     </router-link>
 
     <br /><br />
@@ -53,7 +53,11 @@ export default {
   border-color: white;
   color:white;
   right: 0px;
-  width: 34%;
+  width: 10%;
+  background-image: url("assets/cart.png");
+  background-size: 30%;
+  background-position: 50%,50%;
+  height: 4vw;
 }
 
 #middle_button{
@@ -61,11 +65,12 @@ export default {
   border-right: solid;
   border-bottom: solid;
   border-width: 2px;
-  left:33%;
+  left:45%;
   border-color: white;
   color:white;
   
-  width: 33%;
+  width: 45%;
+  height: 4vw;
 }
 
 #left_button{
@@ -75,8 +80,9 @@ export default {
   left:0px;
   border-color: white;
   color:white;
+  height: 4vw;
   
-  width: 33%;
+  width: 45%;
 }
 
 

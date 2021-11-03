@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>Bienvenue sur</h1><br>
+  <div id="acueil">
+    <h1 id="bvn">Bienvenue sur</h1><br>
     <h1 id="site_name">Find a Restaurant</h1>
   </div>
 </template>
@@ -19,7 +19,7 @@ export default {
 h1{
   font-family: Avenir, Helvetica, Arial, sans-serif;
   font-size: 10vw;
-  margin-top:5%;
+  margin-top:12%;
 }
 
 small {
@@ -27,7 +27,13 @@ small {
 }
 
 #site_name{
-  color: #E8694D;
+  color: #8B4139;
+  font-style: oblique;
 }
+
+#bvn{
+  color: #32424F;
+}
+
 
 </style>

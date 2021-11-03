@@ -58,6 +58,9 @@ export default {
   height: 15vw;
   overflow: hidden;
   z-index: 9;
+   border-style: solid;
+  border-width: 0.5vw;
+  border-color: #32424F;
 }
 
 .restaurant-icon {

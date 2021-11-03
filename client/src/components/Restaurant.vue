@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div id="header1">
       <h1>{{ name }}</h1>
       <h2>Type de cuisine : {{ cuisine }}</h2>
     </div>
@@ -12,10 +12,9 @@
       <div id="video">
         <Video></Video>
       </div>
-
+      
       <div id="map">
-        <h2>Où trouver le restaurant ?</h2>
-         <Map ref="center" />
+         <Map ref="center" id="carte" />
       </div>
       <div id="info">
         <p>Adresse : {{ adresse }}</p>
@@ -23,7 +22,9 @@
     </div>
 
     <div id="right-side">
-      <v-expansion-panels>
+      <h2 id="header2">Liste des menus</h2>
+      <br/>
+      <v-expansion-panels id="pannel">
         <v-expansion-panel>
           <v-expansion-panel-header>Menu</v-expansion-panel-header>
           <v-expansion-panel-content>
@@ -191,11 +192,13 @@ export default {
 
 <style scoped>
 
+
 #map{
   text-align: center;
   width: 60%;
   margin-left: 20%;
   margin-top: 5%;
+  
 }
 
 #video{
@@ -204,7 +207,7 @@ export default {
 }
 
 #photo{
-  width: 50%;
+  width: 10vw;
   height: 0.005vw;
 
 }
@@ -213,23 +216,29 @@ export default {
   float: left;
   width: 50%;
   text-align: center;
-  margin-top: 5%;
+  margin-top: 4%;
+  padding-left: 2%; 
+  
 }
 
 #right-side{
   float: right;
   width: 50%;
   text-align: center;
-  margin-bottom: 15%; 
+  margin-top: 4%; 
+  padding-right: 2%;
+  padding-left: 2%;
+
 }
 
 h1{
-  margin-top: 5%;
+  margin-top: 4%;
   font-size: 3vw;
+  margin-bottom: 2%;
 }
 
 #info{
-  margin-top: 35%;
+  margin-top: 40%;
   text-align: center;
   margin-bottom: 5%;
 }
@@ -248,5 +257,30 @@ p{
   float: right;
   color: green;
 }
+
+#pannel{
+  border-style: solid;
+  border-width: 0.5vw;
+  border-color: #32424F;
+}
+
+#header1{
+  border-bottom-style: solid;
+  border-width: 0.5vw;
+  border-color: #8B4139;
+}
+
+#header2{
+  border-style: solid;
+  border-width: 0.5vw;
+  border-radius: 3px;
+  padding: 3%;
+  margin-left: 25%;
+  margin-right: 25%;
+  border-color: #32424F;
+  font-style: oblique;
+}
+
+
 
 </style>

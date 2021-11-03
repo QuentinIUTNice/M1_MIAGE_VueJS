@@ -60,10 +60,10 @@ export default {
 
         this.menu += '<br />';
         this.menu += '<div><table>';
-        this.menu += '<tr><th></th><th>Nom</th><th>Description</th><th>Image</th><th>Prix</th></tr>';
-        this.menu += '<tr><th>Entrée</th><td>' + gStarter.name + '</td><td>' + gStarter.description + '</td><td><img src=' + gStarter.picture + ' height="100"/></td><td>' + gStarter.price + '</td></tr>';
-        this.menu += '<tr><th>Plat</th><td>' + gDish.name + '</td><td>' + gDish.description + '</td><td><img src=' + gDish.picture + ' /></td><td>' + gDish.price + '</td></tr>';
-        this.menu += '<tr><th>Plat</th><td>' + gDessert.name + '</td><td>' + gDessert.description + '</td><td><img src=' + gDessert.picture + ' /></td><td>' + gDessert.price + '</td></tr>';
+        this.menu += '<tr><th></th><th>Nom</th><th>Image</th><th>Prix</th></tr>';
+        this.menu += '<tr><th>Entrée</th><td>' + gStarter.name + '</td><td><img src=' + gStarter.picture + ' height="100"/></td><td>' + gStarter.price + '</td></tr>';
+        this.menu += '<tr><th>Plat</th><td>' + gDish.name + '</td><td><img src=' + gDish.picture + ' /></td><td>' + gDish.price + '</td></tr>';
+        this.menu += '<tr><th>Dessert</th><td>' + gDessert.name + '</td><td><img src=' + gDessert.picture + ' /></td><td>' + gDessert.price + '</td></tr>';
         this.menu += '</table></div>';
 
         this.price = parseInt(gStarter.price.substring(0, gStarter.price.length)) + 
