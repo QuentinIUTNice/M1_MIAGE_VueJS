@@ -186,7 +186,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 .left-side{
   float: left;
   position: fixed;
@@ -200,20 +200,23 @@ h2 {
   font-size: 1.5vw;
   text-align: center;
   margin-bottom: 2%;
+  color: #32424F;
 }
 
 #formValidate {
   background-color: green;
+  margin-right: 1%;
 }
 
 #formReset {
   background-color: orange;
+  margin-left: 1%;
 }
 
 .right-side{
   float: right;
-  width: 60%;
-  margin-top: 2%;
+  width: 53%;
+  margin-top: 5%;
   margin-right: 2%;
 }
 

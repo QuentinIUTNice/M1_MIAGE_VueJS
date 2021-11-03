@@ -45,3 +45,10 @@ export default {
   },
 };
 </script>
+
+<style>
+
+.video{
+  width: 17vw;
+}
+</style>

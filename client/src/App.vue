@@ -85,6 +85,18 @@ export default {
   width: 45%;
 }
 
+#right_button:hover{
+  margin-top: 0.25%;
+}
+
+#middle_button:hover{
+  margin-top: 0.25%;
+}
+
+#left_button:hover{
+  margin-top: 0.25%;
+}
+
 
 
 .menu:hover{

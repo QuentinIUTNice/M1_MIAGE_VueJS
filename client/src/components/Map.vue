@@ -54,8 +54,8 @@ export default {
 <style scoped>
 .map {
   position: absolute;
-  width: 30vw;
-  height: 15vw;
+  width: 40vw;
+  height: 20vw;
   overflow: hidden;
   z-index: 9;
    border-style: solid;
@@ -67,7 +67,7 @@ export default {
   position: absolute; /* postulat de départ */
     top: 50%; left: 50%; /* à 50%/50% du parent référent */
     transform: translate(-50%, -50%);
-    width: 150%;
+    width: 250%;
     height: auto;
  }
 </style>

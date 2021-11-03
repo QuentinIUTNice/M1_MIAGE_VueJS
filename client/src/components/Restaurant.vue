@@ -2,22 +2,24 @@
   <div>
     <div id="header1">
       <h1>{{ name }}</h1>
-      <h2>Type de cuisine : {{ cuisine }}</h2>
-    </div>
-
-    <div id="left-side">
+      <h2 id="type">Type de cuisine : {{ cuisine }}</h2>
       <div id="photo">
         <Picture></Picture>
       </div>
       <div id="video">
         <Video></Video>
       </div>
+    </div>
+    
+
+    <div id="left-side">
+      
       
       <div id="map">
          <Map ref="center" id="carte" />
       </div>
       <div id="info">
-        <p>Adresse : {{ adresse }}</p>
+        <h2>Adresse : {{ adresse }}</h2>
       </div>
     </div>
 
@@ -193,30 +195,25 @@ export default {
 <style scoped>
 
 
-#map{
-  text-align: center;
-  width: 60%;
-  margin-left: 20%;
-  margin-top: 5%;
-  
-}
 
 #video{
-  width: 50%;
-  margin-left: 50%;
+  float: right;
+  margin-top: 5%;
+  margin-right: 2%;
 }
 
 #photo{
-  width: 10vw;
-  height: 0.005vw;
+  float: right;
+  margin-top: 5%;
+  margin-right: 4%;
 
 }
 
 #left-side{
   float: left;
-  width: 50%;
+  width: 40%;
   text-align: center;
-  margin-top: 4%;
+  margin-top: 3%;
   padding-left: 2%; 
   
 }
@@ -225,22 +222,41 @@ export default {
   float: right;
   width: 50%;
   text-align: center;
-  margin-top: 4%; 
   padding-right: 2%;
   padding-left: 2%;
+  margin-top: 3%;
+}
 
+#header1{
+  border-bottom-style: solid;
+  border-width: 0.5vw;
+  border-color: #8B4139;
+  padding-bottom: 18%;
 }
 
 h1{
-  margin-top: 4%;
+  margin-top: 7%;
   font-size: 3vw;
-  margin-bottom: 2%;
+  color: #32424F;
+  float: left;
+  margin-left: 10%;
+  
+}
+
+#type{
+  float: left;
+  margin-top: 11%;
+  margin-left: 10%;
+  position: fixed;
+  font-size: 2vw;
+  color: #32424F;
 }
 
 #info{
-  margin-top: 40%;
   text-align: center;
-  margin-bottom: 5%;
+  margin-top: 55%;
+  color: #32424F;
+  font-size: 0.75vw;
 }
 
 #avis{
@@ -264,11 +280,7 @@ p{
   border-color: #32424F;
 }
 
-#header1{
-  border-bottom-style: solid;
-  border-width: 0.5vw;
-  border-color: #8B4139;
-}
+
 
 #header2{
   border-style: solid;

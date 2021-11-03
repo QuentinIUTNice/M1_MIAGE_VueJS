@@ -45,3 +45,11 @@ export default {
   },
 };
 </script>
+
+
+<style>
+
+.picture{
+  width: 15vw;
+}
+</style>
