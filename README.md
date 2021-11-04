@@ -8,6 +8,8 @@ Ce projet a été réalisé dans le cadre de notre année de Master MIAGE.
 Tous les composants graphiques proviennent de la bibliothèque graphique Vuetify.
 https://vuetifyjs.com/en/
 
+Le site est 100% responsive.
+
 Le point d'entrée du site est la page d'accueil qui contient le titre du site.
 On peut ensuite naviguer vers la page qui affiche tous les restaurants.
 Dans cette page, on retrouve :
