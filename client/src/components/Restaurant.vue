@@ -14,10 +14,7 @@
       </div>
     </div>
     
-
-    <div id="left-side">
-      
-      
+    <div id="left-side">  
       <div id="map">
          <Map ref="center" id="carte" />
       </div>
@@ -96,7 +93,8 @@
           id="snackbar"
           v-model="snackbar"
           :multi-line="multiLine">
-          <p id="cartContent"></p>
+          <h5>Panier</h5>
+          <p id="cartContent">Total : {{ this.totalPrice }}€</p>
 
           <template v-slot:action="{ attrs }">
             <v-btn
@@ -141,6 +139,7 @@ export default {
       grades: [],
       date: [],
       menuPrice: 0,
+      totalPrice: 0,
       gastronomicMenuPrice: 0,
       multiLine: true,
       snackbar: false,
@@ -217,6 +216,8 @@ export default {
       newNode.innerHTML = this.name + " | Menu | " + this.menuPrice + "€";
 
       document.getElementById("cartContent").prepend(newNode);
+
+      this.totalPrice += this.menuPrice;
     },
     setGastronomicMenuPrice(payload) {
       this.menuPrice = payload.price;
@@ -226,6 +227,8 @@ export default {
       newNode.innerHTML = this.name + " | Menu Gastronomique | " + this.menuPrice + "€";
 
       document.getElementById("cartContent").prepend(newNode);
+
+      this.totalPrice += this.menuPrice;
     },
   },
 };
