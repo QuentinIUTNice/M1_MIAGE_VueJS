@@ -34,3 +34,4 @@ Dans la page détail du restaurant, on retrouve :
   - le panier est un snackbar de Vuetify qui récapitule les menus qui ont été ajouté et qui affiche le prix total de la commande.
 
 Lien vers la vidéo de l'aspect remarquable du projet :
+https://youtu.be/jLMdGSfBG7Q
